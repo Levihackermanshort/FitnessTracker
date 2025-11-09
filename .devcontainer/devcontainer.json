@@ -1,0 +1,32 @@
+{
+    "name": "Fitness Tracker Laravel",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/php:1": {
+            "version": "8.2"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "postCreateCommand": "bash .codespaces/setup.sh",
+    "postStartCommand": "php artisan serve --host=0.0.0.0 --port=8080",
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "8080": {
+            "label": "Laravel Application",
+            "onAutoForward": "notify"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "amiralizadeh9480.laravel-extras",
+                "onecentlin.laravel-blade"
+            ]
+        }
+    }
+}
+
